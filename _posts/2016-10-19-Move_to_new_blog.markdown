@@ -2,7 +2,7 @@
 layout: post
 title:  "Smartjinyu's Blog 全新改版啦！"
 date:   2016-10-19 01:00:00
-categories: Blog
+categories: others
 excerpt: 涣然一新的博客上线啦！
 ---
 
@@ -11,6 +11,8 @@ excerpt: 涣然一新的博客上线啦！
 ![website](/img/2016-10-19/website.png)
 
 #### 关于模板
+
+![logo](/img/logo.png)
 
 鉴于自己审美和美工方面极度欠缺，加上对Javascript、Html等前端的技能不熟悉，本次改版依照了DONGChuan的[Yummy-Jekyll]进行搭建，博客使用Jekyll生成，搭建在Github Pages上。在修改模板的过程中，遇到一些环境配置问题，解决过程参考了[此篇博客]，在此一并表示感谢。
 
@@ -42,11 +44,13 @@ excerpt: 涣然一新的博客上线啦！
 改版初期本打算使用WordPress搭建一个全功能的动态网站，但是在选购VPS(现有的这台还有他用)、数据库管理、前端开发、网站的安全维护等方面感到力不从心，先使用比较省心的Github Pages，待以后才学有所长进后(点亮以下技能后)，再来完整地尝试建站。
 
 目前正在点的技能:
+
 - Computer Network
 - DataBase and SQL
 - Usage of Linux
 
 将要点的技能:
+
 - Javascipt
 - HTML\CSS
 - ETC..

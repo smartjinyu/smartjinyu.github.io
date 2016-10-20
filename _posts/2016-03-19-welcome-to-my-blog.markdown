@@ -2,7 +2,7 @@
 layout: post
 title:  "欢迎来到大金鱼的博客!"
 date:   2016-03-19 11:34:20
-categories: Blog
+categories: others
 author: smartjinyu
 image: /img/2016-03-19/bg.jpg
 excerpt: 欢迎来到大金鱼的博客！开篇词在此。
