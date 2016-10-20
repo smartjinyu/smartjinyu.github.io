@@ -27,7 +27,7 @@ excerpt: 涣然一新的博客上线啦！
 
 #### 关于HTTPS
 
-基于数据传输的安全性、对抗运营商的流氓劫持、Google的结果排名等诸多因素的考量，本次改版为博客加上了HTTPS加密，并且强制启用。由于博客搭建在Github Pages上，在选择SSL证书方面存在诸多限制，目前的解决方案是使用Cloudflare的证书，Flexible方案免费，使用namesever将流量转到CF的服务器上，实现从客户端到CF服务器的加密，不过从CF的服务器到原始服务器这一段依旧是不加密的，基于博客现有的需要和技术限制，暂且认为可以接受。启用HTTPS的过程参考了CF的[Official Guide] and [This blog]。
+基于数据传输的安全性、对抗运营商的流氓劫持、Google的结果排名等诸多因素的考量，本次改版为博客加上了HTTPS加密，并且强制启用。由于博客搭建在Github Pages上，在选择SSL证书方面存在诸多限制，目前的解决方案是使用Cloudflare的证书，Flexible方案免费，使用namesever将流量转到CF的服务器上，实现从客户端到CF服务器的加密，不过从CF的服务器到原始服务器这一段依旧是不加密的，基于博客现有的需要和技术限制，暂且认为可以接受。启用HTTPS的过程参考了CF的[Official Guide] and [This blog]。由于域名没有备案，无法使用CF与百度云合作的国内CDN节点，经测试，厦门移动会连接到Hong Kong的服务器，latency在50ms-80ms左右，尚可接受，但是电信会重定向到Los Angeles的CF服务器，延迟可能超过150ms，还望谅解。
 
 ![ssl](/img/2016-10-19/ssl.png)
 
