@@ -1,0 +1,12 @@
+.about ul {
+    margin-left: 45px;
+}
+
+.about p {
+    text-indent: 45px;
+}
+
+.about .btn {
+    margin-bottom: 5px;
+}
+.icon-logo{fill: #000;}

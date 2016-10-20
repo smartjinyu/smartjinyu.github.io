@@ -1,0 +1,82 @@
+<div class="about row">
+
+    <div class="col-md-8">
+        <h2>About me</h2>
+
+        <p>终于完成博客的改版，本版本以DONGChuan的Yummy-Jekyll为蓝本构建而成，在此表示感谢，原始代码可参考页面左下角的链接。目前博客是搭建在Github Pages上，利用Jekyll完成的，待未来才学有所长进后，再考虑自己写主要代码，并把博客迁移到VPS上吧。（又立Flag）
+        本站目前使用了Google Analytics和Disqus评论系统，私以为这些服务国内没有令人放心的替代品，不使用梯子访问可能会遇到网页加载缓慢、加载不全等问题，建议翻墙访问。</p>
+
+        <h2>About me</h2>
+        <p>大二学生，坐标厦门。非计算机专业，学渣+菜鸡一枚。平时喜欢自己敲敲电脑，正在自学Computer Science的基础课程。水平较菜，努力向大牛们学习中。</p>
+
+        <h2>Contact Me</h2>
+
+        <ul>
+            <li>Email：<a href="mailto:{{ site.email }}" target="_top">{{ site.email }}</a></li>
+            <li>GitHub：<a href="{{ site.github_url }}">{{ site.github_url }}</a></li>
+            <li>Twitter:<a href="https://twitter.com/{{ site.twitter_name }}">https://twitter.com/{{site.github_url }}</a></li>
+
+        </ul>
+        
+        <!--
+        <h2>Skill Keywords</h2>
+
+        {% if site.skill_software_keywords %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Software Engineer Keywords</h3>
+            </div>
+            <div class="panel-body">
+                {% for keyword in site.skill_software_keywords %}
+                <button class="btn btn-default" type="button">{{ keyword }}</button>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if site.skill_j2ee_keywords %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">J2EE Developer Keywords</h3>
+            </div>
+            <div class="panel-body">
+                {% for keyword in site.skill_j2ee_keywords %}
+                <button class="btn btn-default" type="button">{{ keyword }}</button>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if site.skill_mobile_app_keywords %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Mobile Developer Keywords</h3>
+            </div>
+            <div class="panel-body">
+                {% for keyword in site.skill_mobile_app_keywords %}
+                <button class="btn btn-default" type="button">{{ keyword }}</button>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if site.skill_web_keywords %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Web Developer Keywords</h3>
+            </div>
+            <div class="panel-body">
+                {% for keyword in site.skill_web_keywords %}
+                <button class="btn btn-default" type="button">{{ keyword }}</button>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        -->
+    </div>
+    <!--
+    <div class="col-md-4">
+        {% include sidebar-popular-repo.html %}
+    </div>
+    -->
+</div>

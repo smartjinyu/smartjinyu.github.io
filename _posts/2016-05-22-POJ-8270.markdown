@@ -1,0 +1,177 @@
+---
+layout: post
+title:  "POJ C++程序设计 编程题＃11：数据库内的学生信息"
+date:   2016-05-22 10:38:20
+categories: Coursera
+author: smartjinyu
+image: /img/2016-05-22/pic.png
+excerpt: POJ上一个题的解答，难度不高，但不知为何找不到其他人的答案，权当抛砖引玉。
+analytics: true
+---
+这几周一直跟着Coursera刷北大的C语言程序设计和C++程序设计，所有的课后习题都来自POJ，也懒得更新博客。这个题难度不大，写一个multimap的派生类，不过有点小坑的地方。个人习惯，每个题做完搜索一下是否有更好的解法（有时间倒是想整理一下个人觉得比较巧妙的解法）。很遗憾，这个题网上没有其他解答，查POJ的数据，2015年提交很少，到2016程序设计实习课程才有较多人提交。 Anyway，权当抛砖引玉了。
+
+{% highlight ruby %}
+/*
+编程题＃11：数据库内的学生信息
+
+描述
+程序填空，使得下面的程序,先输出
+(Tom,80),(Tom,70),(Jone,90),(Jack,70),(Alice,100),
+(Tom,78),(Tom,78),(Jone,90),(Jack,70),(Alice,100),
+(70,Jack),(70,Tom),(80,Tom),(90,Jone),(100,Alice),
+(70,Error),(70,Error),(80,Tom),(90,Jone),(100,Alice),
+******
+然后，再根据输入数据按要求产生输出数据
+
+输入
+输入数据的每一行，格式为以下之一：
+A name score
+Q name score
+name是个不带个空格的字符串，长度小于 20
+score是个整数，能用int表示
+A name score 表示往数据库中新增一个姓名为name的学生，其分数为score。开始时数据库中一个学生也没有。
+Q name 表示在数据库中查询姓名为name的学生的分数
+数据保证学生不重名。
+输入数据少于200,000行。
+
+输出
+对于每个查询，输出学生的分数。如果查不到，则输出 "Not Found"
+
+样例输入
+A Tom1 30
+A Tom2 40
+Q Tom3
+A Tom4 89
+Q Tom1
+Q Tom2
+
+样例输出
+(Tom,80),(Tom,70),(Jone,90),(Jack,70),(Alice,100),
+(Tom,78),(Tom,78),(Jone,90),(Jack,70),(Alice,100),
+(70,Jack),(70,Tom),(80,Tom),(90,Jone),(100,Alice),
+(70,Error),(70,Error),(80,Tom),(90,Jone),(100,Alice),
+******
+Not Found
+30
+40
+
+提示
+1) 编写模板的时候，连续的两个 “>”最好要用空格分开，以免被编译器看作是 ">>"运算符。VS可能无此问题，但是Dev C++和服务器上的编译环境会有这个问题。
+比如 vector<vector<int>> 有可能出错，要改成 vector<vector<int> >
+2) 在模板中写迭代器时，最好在前面加上 typename关键字，否则可能会编译错。VS可能无此问题，但是Dev C++和服务器上的编译环境会有这个问题。
+*/
+#include <iostream>
+#include <string>
+#include <map>
+#include <iterator>
+#include <algorithm>
+using namespace std;
+// 在此处补充你的代码
+template<class Key,class T,class Pred= greater<Key> >
+//此处默认的函数对象类模板应当是greate<>,注意mp默认的规则是名字从大到小排列，小坑一个
+class MyMultimap :public multimap<Key,T,Pred> {
+    typedef multimap<Key, T, Pred> MP;
+private:
+    MP maap;
+public:
+    MyMultimap & insert(pair<Key, T> const & p) {
+        maap.insert(p);
+        return *this;
+    }
+    void Set(Key k, T t) {
+        int n = maap.erase(k);//返回Key的值为k的数量
+        for (int i = 0; i < n; i++) {
+            maap.insert(make_pair(k, t));
+        }
+    }
+    void clear() {
+        maap.clear();
+    }
+    typename MP::iterator find(Key k) {
+        return maap.find(k);
+    }
+    typename MP::iterator begin() {
+        return maap.begin();
+    }
+    typename MP::iterator end() {
+        return maap.end();
+    }
+};
+template <class T>
+template<class Key, class T>
+ostream & operator<<(ostream & os,pair<Key, T> &p) {
+    os << "("<<p.first<<"," << p.second<<")";
+    return os;
+}
+//
+struct Student
+{
+    string name;
+    int score;
+};
+template <class T>
+void Print(T first, T last) {
+    for (; first != last; ++first)
+        cout << *first << ",";
+    cout << endl;
+}
+int main()
+{
+
+    Student s[] = { { "Tom",80 },{ "Jack",70 },
+    { "Jone",90 },{ "Tom",70 },{ "Alice",100 } };
+    MyMultimap<string, int> mp;
+    for (int i = 0; i<5; ++i)
+        mp.insert(make_pair(s[i].name, s[i].score));
+    Print(mp.begin(), mp.end()); //按姓名从大到小输出
+
+    mp.Set("Tom", 78); //把所有名为"Tom"的学生的成绩都设置为78
+    Print(mp.begin(), mp.end());
+
+    MyMultimap<int, string, less<int> > mp2;
+    for (int i = 0; i<5; ++i)
+        mp2.insert(make_pair(s[i].score, s[i].name));
+
+    Print(mp2.begin(), mp2.end()); //按成绩从小到大输出
+    mp2.Set(70, "Error");          //把所有成绩为70的学生，名字都改为"Error"
+    Print(mp2.begin(), mp2.end());
+    cout << "******" << endl;
+
+    mp.clear();
+
+    string name;
+    string cmd;
+    int score;
+    while (cin >> cmd) {
+        if (cmd == "A") {
+            cin >> name >> score;
+            if (mp.find(name) != mp.end()) {
+                cout << "erroe" << endl;
+            }
+            mp.insert(make_pair(name, score));
+        }
+        
+        else if (cmd == "Q") {
+            cin >> name;
+            MyMultimap<string, int>::iterator p = mp.find(name);
+            if (p != mp.end()) {
+                cout << p->second << endl;
+            }
+            else {
+                cout << "Not Found" << endl;
+            }
+        }
+    }
+    return 0;
+}
+{% endhighlight %}
+
+
+
+###### 几点提示
+
+1. 如同注释里所说，默认的Mymultimap大小比较规则应当是greater，因为在默认情况下是从大到小输出的。要注意的是，在Visual Studio环境下（个人是2015 Update2）需要include头文件functional，在Dev C++和GCC编译器下不需要。
+2. 类模板中的成员函数如果是函数模板，函数前不需要template，否则在VS环境下编译通过但GCC下会Compile Error。
+3. 这个题难度不高，继承multimap类后根据ide的error list一点点debug就行，记得map/multimap容器中的元素都是pair对象。
+4. 可是我一开始对着multimap的源码妄图自己从头造个轮子。。。。。
+5. 有更好的解法欢迎在评论区提出哈！（虽然这么简单的题大概是不会有了吧）

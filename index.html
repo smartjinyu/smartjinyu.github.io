@@ -1,0 +1,79 @@
+---
+layout: default
+menu: home
+css: ['index.css', 'sidebar-popular-repo.css']
+---
+<section class="jumbotron">
+    <div class="container">
+        <h1>{{ site.title }}</h1>
+        <div id="jumbotron-meta-info">
+            <span class="meta-info hvr-grow">
+                <span class="octicon octicon-location"></span>
+                <a href="{{ site.location_url }}" target="_blank">{{ site.location }}</a>
+            </span>
+            <!--
+            <span class="meta-info hvr-grow">
+                <span class="octicon octicon-organization"></span>
+                <a href="{{ site.company_url }}" target="_blank">{{ site.company }}</a>
+            </span>
+            -->
+            <span class="meta-info hvr-grow">
+                <span class="octicon octicon-mark-github"></span>
+                <a href="{{ site.github_url }}" target="_blank">{{ site.name }}</a>
+            </span>
+
+            <span class="meta-info hvr-grow">
+                <span class="icon  icon--twitter">
+                  <svg width="18px" height="17.6px" viewBox="-1 -1 15 15">
+                    <path fill="#fff" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                    c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                  </svg>
+                </span>
+                <a href="https://twitter.com/{{ site.twitter_name }}" target="_blank">{{ site.twitter_name }}</a>
+            </span>
+
+
+
+
+        </div>
+    </div>
+</section>
+<section class="content container">
+
+    <div class="row">
+
+        <!-- Post List -->
+        <div class="col-md-8">
+
+            <ol class="post-list">
+                {% for post in paginator.posts %}
+                <li class="post-list-item">
+                    <h2 class="post-list-title">
+                        <a class="hvr-underline-from-center" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+                    </h2>
+                    <p class="post-list-description">
+                        {{ post.excerpt | strip_html | strip }}
+                    </p>
+                    <p class="post-list-meta">
+                        <span class="octicon octicon-calendar"></span> {{ post.date | date: "%Y/%m/%d" }}
+                    </p>
+                </li>
+                {% endfor %}
+            </ol>
+
+            <!-- Pagination -->
+            {% include pagination.html %}
+
+            <!-- Comments -->
+            {% include disqus-comments.html %}
+
+        </div>
+
+        <div class="col-md-4">
+            {% include sidebar-popular-repo.html %}
+        </div>
+
+    </div>
+
+</section>
+
