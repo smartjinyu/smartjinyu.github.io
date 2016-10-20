@@ -8,13 +8,14 @@ excerpt: 涣然一新的博客上线啦！
 
 由于种种原因，第一版的博客存在诸多缺陷，比如缺乏HTTPS加密、文章较多时浏览体验不佳等，这两天抽空对博客进行了改版，在界面美观度、易用性等方面应该会有很大提高。
 
-![website](/img/2016-10-19/website.png)
+![logo](/img/logo.png)
+
 
 #### 关于模板
 
-![logo](/img/logo.png)
+![website](/img/2016-10-19/website.png)
 
-鉴于自己审美和美工方面极度欠缺，加上对Javascript、Html等前端的技能不熟悉，本次改版依照了DONGChuan的[Yummy-Jekyll]进行搭建，博客使用Jekyll生成，搭建在Github Pages上。在修改模板的过程中，遇到一些环境配置问题，解决过程参考了[此篇博客]，在此一并表示感谢。
+鉴于自己审美和美工方面极度欠缺，加上对Javascript、Html等前端的技能不熟悉，本次改版根据DONGChuan的[Yummy-Jekyll]的模板进行修改，博客使用Jekyll生成，搭建在Github Pages上。在修改模板的过程中，遇到一些环境配置问题，解决过程参考了[此篇博客]，在此一并表示感谢。
 
 [Yummy-Jekyll]:https://github.com/DONGChuan/Yummy-Jekyll
 [此篇博客]:http://knightcodes.com/miscellaneous/2016/09/13/fix-github-metadata-error.html
@@ -36,6 +37,12 @@ excerpt: 涣然一新的博客上线啦！
 
 [Official Guide]:https://support.cloudflare.com/hc/en-us/articles/201720164-Sign-up-planning-guide
 [This blog]:https://sheharyar.me/blog/free-ssl-for-github-pages-with-custom-domains/
+
+#### 关于Disqus
+
+把protocol从HTTP迁移到HTTPS后，原先页面下的Disqus的评论会消失，Disqus官方提供了相应的[Migration Tools]，按照说明进行迁移即可(最多可能需要24小时才能生效)。
+
+[Migration Tools]:https://help.disqus.com/customer/portal/articles/286778-using-the-migration-tools
 
 #### 感言
 
