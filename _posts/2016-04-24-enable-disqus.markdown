@@ -2,7 +2,7 @@
 layout: post
 title:  "博客启用评论功能啦！"
 date:   2016-04-24 00:34:20
-categories: Blog
+categories: others
 author: smartjinyu
 image: /img/2016-04-24/disqus.jpg
 excerpt: 成功为大金鱼's Blog启用了评论功能（Powered By Disqus）！欢迎留下您的看法。
