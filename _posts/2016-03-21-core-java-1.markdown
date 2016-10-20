@@ -1,0 +1,91 @@
+---
+layout: post
+title:  "Core Java 学习笔记 1"
+date:   2016-03-21 12:34:20
+categories: Java
+author: smartjinyu
+image: /img/2016-03-20/corejava.jpg
+excerpt: 本系列笔记主要记录学习《Java核心技术 卷1 基础知识》（原书第九版）时值得注意的问题
+analytics: true
+---
+##### 说明
+本系列笔记主要记录学习《Java核心技术 卷1 基础知识》（原书第九版）时值得注意的问题，不求全面、系统，只求简练、实用。有些东西相当基础，备日后复习之用。学习过程以翻译版为主，适当使用英文原版作为补充。
+
+##### 笔记
+
+###### 第三章 Java的基本程序结构
+
+- P29 Java对大小写敏感，如果出现大小写拼写错误，程序将无法运行（比如将main写成Main）。
+
+- P30 标准的命名规范是：类名是以大写字母开头的名词。如果名字由多个单词组成，每个单词的第一个字母都应该大写，成为骆驼命名法。如：FirstClass、CamelClass
+
+- P30、31 main方法必须声明为public。Java中的所有函数都属于某个类的方法。
+
+- P31 在Java中，每个句子必须以分号结束，回车不是语句结束的标志，如果需要，可以将一条语句写在多行上。
+
+- P32 System.out.println()打印后换行，System.out.print()打印后不换行。
+
+- P34 Java中，所有的数值类型所占据的字节数量与平台无关。Java中没有任何无符号类型（unsigned）。
+
+- P35 常量Double.POSITIVE_INFINITY、Double.NEGATIVE_INFINITY和Double.NaN分别表示正无穷、负无穷、NaN。正整数除以0为正无穷，计算0/0或负数的平方根的结果为NaN。不可以用x == Double.NaN 来检测值，可以用Double.isNaN()方法。
+
+- P38 在java中，利用关键字final指示常量。如final double PI = 3.1415926; final表示这个变量只能被赋值一次。
+
+　　　可用static final在类中、方法外设置类常量，如
+{% highlight ruby %}
+public class test
+{
+	public static final double PI = 3.1415926;
+	public static void main (String[] args)
+	{
+
+	}
+}
+{% endhighlight %}
+　　　声明为public，其他类的方法也可使用。
+
+- P41 Java支持三元运算符。条件为真执行第一个表达式，为假执行第二个表达式。如 x < y ? x : y; 语句返回x、y中较小的值。
+
+- 当变量的取值在一个有限的集合内时，可以自定义枚举类型。枚举类型包含有限个命名的值。如
+{% highlight ruby %}
+enum Size {SMALL,MEDIUM,LARGE};
+Size s = Size.MEDIUM;
+{% endhighlight %}
+　　　Size类型的变量只能存储声明中给定的某个枚举值或null。
+- P48 不可用 == 运算符检测两个字符串是否相等，应当使用 a.equals(b); 来检测。
+
+- P53 StringBuilder 类效率高于String类，使用时用ToString方法得到一个String对象。
+
+- P54 读取字符串需要构造一个Scanner对象，并与标准输入流System.in关联。
+{% highlight ruby %}
+Scanner in = new Scanner(System.in);
+String s = in.nextLine();
+{% endhighlight %}
+　　　nextLine()、nextInt()、nextDouble(),next()为读取下一个单词，以空格作为分隔符 P56。
+
+- P57 格式化输出方式与C语言相同。
+
+- P62 Java中不允许在嵌套的块中重定义一个变量。
+
+- P69 在循环中，应该避免检测两个浮点数是否相等，否则舍入的误差容易导致死循环。
+
+- P71 Java的switch语句同C/C++完全相同。
+
+- P73 如果switch语句的case分支末尾没有break，会导致继续执行下一个case语句。因此在编译时可以加上下列参数，使得编译器警告没有case的直通式行为。
+{% highlight ruby %}
+javac -Xlint:fallthrough Test.java
+{% endhighlight %}
+
+- P75 循环中，可以用break跳出循环，continue跳到循环首部，break可以带label。
+
+- P76 Java中，可以使用java.math包中的BigInteger和BigDecimal类实现任意精度的运算。类的方法见P77
+{% highlight ruby %}
+BigInteger a = BigInteger.valueOf(100); //将普通数值转化为大数值
+BigInteger b = a.add(a);
+BigInteger b = a.multiply(a);
+{% endhighlight %}
+
+- P81 main方法的String[] args参数接收的是一个字符串数组，即命令行参数，使用 arg[0].equals(); 来加以判断。
+
+- P89 Java中的多维数组相当于数组的嵌套，可以藉此创建一个不规则数组（三角形），详见P89示例代码。
+
