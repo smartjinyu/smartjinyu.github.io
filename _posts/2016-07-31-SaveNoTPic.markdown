@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "保存Now on Tap截图：v1.2更新发布"
+title:  "保存Now on Tap截图：v1.3更新发布"
 date:   2016-08-02 02:38:20
 categories: SaveNoTPic
 author: smartjinyu
 image: /img/2016-07-31/googleNow.png
-excerpt: SaveNoTPic v1.2更新啦（2016-09-21）
+excerpt: SaveNoTPic v1.3更新啦（2016-10-27）
 analytics: true
 ---
 ##### 应用说明
@@ -22,6 +22,11 @@ Android 6.0+（也就Now on Tap有这种需求吧）
 ![Screenshot](\img\2016-07-31\SaveNoTPic.png)
 
 ##### 更新日志
+
+###### 2016-10-27 v1.3：
+1. 修正自定义保存目录不生效的问题
+2. 修正目录不存在时保存失败的问题(thanks to @EMK2000)
+3. 修正帮助链接失效的问题
 
 ###### 2016-09-21 v1.2：
 1. 修正在新版Google App下FC的问题
@@ -47,5 +52,5 @@ Google material-design-icons、NoNonsense-FilePicker
 [Github]
 
 [https://github.com/smartjinyu/SaveNoTPic]:https://github.com/smartjinyu/SaveNoTPic
-[Github]:https://github.com/smartjinyu/SaveNoTPic/releases/download/v1.2/com.smartjinyu.SaveNoTPic_1.2.apk
+[Github]:https://github.com/smartjinyu/SaveNoTPic/releases/download/v1.3/com.smartjinyu.SaveNoTPic_1.3.apk
 [酷安网]:http://www.coolapk.com/apk/com.smartjinyu.savenotpicsss
