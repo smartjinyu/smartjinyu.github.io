@@ -22,9 +22,13 @@ excerpt: 真的猛士，敢于在填完旧坑前再开新坑
 
 ![APTBNRG](/img/2016-10-25/APTBNRG.png)
 
-郭神那本《第一行代码》虽然经典，但是基于Android 4.4和Eclipse显得有些古老，第二版据说今年十二月份会出版，但学习最重要的还是趁热(情)打铁，决定从Android Programming: The Big Nerd Ranch Guide (2nd Edition)开始，并结合Google官方的[Android Training]进行学习,此书在国外评价甚高，读原版也能免去诸多翻译上的问题，顺便锻炼锻炼英文水平。此书是Project Based，全书共分34 Chapter，共有8个Project来熟悉Android开发的方方面面。此前虽然有一点基础，但是Java的知识遗忘不少，加上数学专业课、计算机网络、数据库系统、汇编语言、Linux、数据挖掘等一堆坑等着填，以及下个月死亡期中考，尽我所能在2017/01/14本学期结束之前完成这第一阶段的计划，就像Computer Network中的IP Protocol，do best effort,but offer no guarantee。
+郭神那本《第一行代码》虽然经典，但是基于Android 4.4和Eclipse显得有些古老，第二版据说今年十二月份会出版，但学习最重要的还是趁热(情)打铁，决定从Android Programming: The Big Nerd Ranch Guide (2nd Edition)开始，并结合Google官方的[Android Training]进行学习,此书在国外评价甚高，读原版也能免去诸多翻译上的问题，顺便锻炼锻炼英文水平。此书是Project Based，全书共分34 Chapter，共有8个Project来熟悉Android开发的方方面面。此前虽然有一点基础，但是Java的知识遗忘不少，加上数学专业课、计算机网络、数据库系统、汇编语言、Linux、数据挖掘等一堆坑等着填，以及下个月死亡期中考，尽我所能在2016年结束之前完成这第一阶段的计划，就像Computer Network中的IP Protocol，do best effort,but offer no guarantee。
 
 等第一阶段完成后，再视情况进行下一步的学习，可能是从Java方面读比如Effective Java, Thinking in Java,或者Android方面进一步深入。
+
+##### Update 2016-11-04:
+
+读完后需要阅读《Java设计模式》
 
 [Android Training]:https://developer.android.com/training/index.html
 
