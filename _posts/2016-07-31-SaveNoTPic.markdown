@@ -8,6 +8,8 @@ image: /img/2016-07-31/googleNow.png
 excerpt: SaveNoTPic v1.4更新啦（2016-12-02）
 analytics: true
 ---
+See [My Github Page] for English version.
+
 ## 应用说明
 Android 6.0+ 的设备开启 Google Now on Tap 后，可以长按 Home 键后单击分享按钮获取截图，这种模式下会隐藏状态栏和导航栏的 icon，无论在美观还是隐私上都强于传统的截图。无奈有些应用(比如 QQ 和微信)直接分享会提示“文件不存在”，刚学 Android 编程，顺手写了个小程序。安装后，本程序会在分享菜单中添加一项“保存截图”(英文系统下为 “SaveNoTPic”)按钮，可以将截图保存到指定位置，并根据用户设置是否打开分享界面。
 
@@ -58,6 +60,7 @@ Google material-design-icons、NoNonsense-FilePicker
 
 [Github]
 
+[My Github Page]:https://github.com/smartjinyu/SaveNoTPic
 [我的 Github 页面]:https://github.com/smartjinyu/SaveNoTPic
 [Github]:https://github.com/smartjinyu/SaveNoTPic/releases/download/v1.3/com.smartjinyu.SaveNoTPic_1.4.apk
 [酷安网]:http://www.coolapk.com/apk/com.smartjinyu.savenotpicsss
