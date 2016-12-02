@@ -62,5 +62,5 @@ Google material-design-icons、NoNonsense-FilePicker
 
 [My Github Page]:https://github.com/smartjinyu/SaveNoTPic
 [我的 Github 页面]:https://github.com/smartjinyu/SaveNoTPic
-[Github]:https://github.com/smartjinyu/SaveNoTPic/releases/download/v1.3/com.smartjinyu.SaveNoTPic_1.4.apk
+[Github]:https://github.com/smartjinyu/SaveNoTPic/releases/download/v1.4/com.smartjinyu.SaveNoTPic_1.4.apk
 [酷安网]:http://www.coolapk.com/apk/com.smartjinyu.savenotpicsss
