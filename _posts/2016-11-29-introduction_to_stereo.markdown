@@ -13,11 +13,13 @@ excerpt: 玩了两天隐写术，对相关原理、工具的简单总结
 - [Wikipedia Steganograhy 词条] 可以用来简单了解一下隐写术的原理和历史
 - [隐写术总结 - 乌云知识库] 此文很好地结合了隐写术的基本原理和实战操作，推荐阅读(乌云网目前无法打开，使用网页快照或搜索转载文章即可)
 - [实验吧课程-CTF新手入门之隐写术实例讲解] 几个很短的视频，可以观摩一下各种工具的使用
+- [《数据隐藏技术揭秘》] 一本很薄的小书，介绍了隐写术的相关技术和工具，难度不大，比较系统，可以一读
 
 
 [Wikipedia Steganograhy 词条]:https://en.wikipedia.org/wiki/Steganography
 [隐写术总结 - 乌云知识库]:drops.wooyun.org/tips/4862
-[实验吧课程-CTF新手入门之隐写术实例讲解]:http://www.shiyanbar.com/courses/detail/344
+[实验吧课程-CTF新手入门之隐写术实例讲解]:http://www.shiyanbar.com/courses/detail/344.
+[《数据隐藏技术揭秘》]:https://book.douban.com/subject/25837887/
 
 ## 2. 习题演练
 
@@ -45,6 +47,31 @@ excerpt: 玩了两天隐写术，对相关原理、工具的简单总结
 [这篇博客]:http://www.freebuf.com/sectool/15266.html
 [例题]:http://www.shiyanbar.com/ctf/1766
 
+- **Stegdetect**: 用于检测 JPEG 文件中是否包含隐藏内容并尝试分析隐藏内容通过哪个隐写工具嵌入，官网打不开，网上找到一份[编译好的 Windows 版本]。使用方式为：
+    - `stegdetect [-nqV] [-s <float>] [-d <num>] [-t <tests>] [file.jpg ...]`
+    - -q 仅显示可能包含隐藏内容的图像。
+    - -n 启用检查 JPEG 文件头功能，以降低误报率。如果启用，所有带有批注区域的文件将被视为没有被嵌入信息。如果 JPEG 文件的 JFIF 标识符中的版本号不是1.1，则禁用 OutGuess 检测。
+    - -s 修改检测算法的敏感度，该值的默认值为1。检测结果的匹配度与检测算法的敏感度成正比，算法敏感度的值越大，检测出的可疑文件包含敏感信息的可能性越大。
+    - -d 打印带行号的调试信息。
+    - -t 设置要检测哪些隐写工具（默认检测 jopi），可设置的选项如下：
+        - j 检测图像中的信息是否是用 jsteg 嵌入的。
+        - o 检测图像中的信息是否是用 outguess 嵌入的。
+        - p 检测图像中的信息是否是用 jphide 嵌入的。
+        - i 检测图像中的信息是否是用 invisible secrets 嵌入的。
+    - -V 显示软件版本号。
+
+[编译好的 Windows 版本]:http://ftp.mirrorservice.org/sites/ftp.wiretapped.net/pub/security/steganography/stegdetect/
+
+- **Outguess**: 用于提取 JPEG 文件中使用 Outguess 算法的加入的隐藏信息，官网挂了一堆代理都打不开，网上找到一份编译好的[ Windows 版本]。常用命令：
+    - `./outguess -r test.jpg output.txt`  用于还原 JPG 图片中的隐藏信息 [例题]
+
+[ Windows 版本]:http://www-uxsup.csx.cam.ac.uk/pub/windows/cygwin/x86/release/outguess/
+[例题]:http://www.shiyanbar.com/ctf/1931
+
+- **JPHS**: 用于对 JPEG 文件进行 Jhide 算法的隐写或提取，详细介绍及软件下载可以参见[这篇博客]。
+
+[这篇博客]:https://www.hackfun.org/CTF/jphide-steganography.html
+
 -  **MP3Stego**: 用于对 MP3 音频文件进行隐写、提取等操作，下载及使用[参见此网页]，常用命令：
     - `encode -E hidden_text.txt -P pass svega.wav svega_stego.mp3` 用于写入隐藏信息
     - `decode -X -P pass svega_stego.mp3` 用于提取隐藏在音频文件中的信息 [例题]
@@ -52,14 +79,13 @@ excerpt: 玩了两天隐写术，对相关原理、工具的简单总结
 [参见此网页]:http://www.petitcolas.net/steganography/mp3stego/
 [例题]:http://www.shiyanbar.com/ctf/58
 
-- **Outguess**: 用于提取 JPG 文件中使用 Outguess 算法的加入的隐藏信息，官网挂了一堆代理都打不开，网上找到一份编译好的[ Windows 版本的二进制文件]。常用命令：
-    - `./outguess -r test.jpg output.txt`  用于还原 JPG 图片中的隐藏信息 [例题]
+- **MSU Stego**: 用于对 AVI 文件进行隐写\提取操作，介绍见[官网]
 
-[ Windows 版本的二进制文件]:http://www-uxsup.csx.cam.ac.uk/pub/windows/cygwin/x86/release/outguess/
-[例题]:http://www.shiyanbar.com/ctf/1931
+[官网]:http://www.compression.ru/video/stego_video/index_en.html
 
 - **其他工具**
     - **QR Reader**: 用于在 Windows 下进行 QR Code 的扫描，可以自定义参数
+    - **Advanced Archive Password Recovery**: 爆破压缩文档密码
     - **[MD5 解密]**: 在线工具，用于解密 MD5 字符串
     - **[在线加密解密]**: 亦是在线工具，支持各种加密协议
 
@@ -83,7 +109,7 @@ excerpt: 玩了两天隐写术，对相关原理、工具的简单总结
 
 ### 4.3 Zip 伪加密
 
-有时候得到一个加密的 Zip 文件，但没有任何关于密码的线索，可以考虑是否为伪加密的 Zip 文件，[此题]即是很好的例子，相关说明可见[这篇博客]。
+有时候得到一个加密的 ZIP 文件，但没有任何关于密码的线索，可以考虑是否为伪加密的 ZIP 文件，[此题]即是很好的例子，相关说明可见[这篇博客]。
 
 [此题]:http://www.shiyanbar.com/ctf/716
 [这篇博客]:http://blog.csdn.net/etf6996/article/details/51946250
@@ -93,6 +119,19 @@ excerpt: 玩了两天隐写术，对相关原理、工具的简单总结
 对于两张图片的问题，可用 `StegSolve` 对双图进行各种操作(SUB、XOR、AND)等等，看是否获取有用信息，可能与加解密、二维码等综合。[例题]。
 
 [例题]:http://www.shiyanbar.com/ctf/1926
+
+### 4.5 F5 隐写术
+
+一种隐写算法，可以由 `Stegdetect· 检测出，[Github] 上有工具提取密文，也可参看[此例题]。
+
+[Github]:https://github.com/matthewgao/F5-steganography
+[此例题]:http://www.shiyanbar.com/ctf/1938
+
+### 4.6 加密算法
+
+有时候分析出来的 flag 经过加密，简单的 Base64、MD5 等不再赘述，[这篇博客]比较全面地总结了隐写术中用到的加密算法，可以参看。文中还提供了各种加密方式的解密工具。
+
+[这篇博客]:http://www.secbox.cn/hacker/ctf/8078.html
 
 ## 5. 简单总结
 
