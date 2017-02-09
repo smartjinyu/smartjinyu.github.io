@@ -6,6 +6,10 @@ categories: Android
 excerpt: 开源的实体书籍管理应用
 ---
 
+English Version [Here]
+
+[Here]:https://github.com/smartjinyu/MyBookshelf/blob/master/README.md
+
 ## 开发背景
 
 从家里到学校，我的每一个书架上都堆满了各种杂书，需要寻找時却往往手忙脚乱乃至无迹可寻，常常发生购买相同书籍的事情，迫切需要一款应用来管理实体书籍。试过国内的几款应用后，发现都有恼人的社交功能，且无法关闭。个人以为自己的书单是一件相当隐私的事，不应该未经同意被拿出去被人四处评价，正好[初学 Android 开发]，便利用寒假时间自己写了一款。
