@@ -52,7 +52,9 @@ Bookshelf - 开源的实体书籍管理工具，您的电子书架
 
 ## 应用下载
 
-应用已提交 [Google Play Store]，正在审核中。后续也会上架一些国内市场，或者从 [Github] 上直接下载 APK 文件。
+[Google Play]
 
-[Google Play Store]:https://play.google.com/store/apps/details?id=com.smartjinyu.mybookshelf
-[Github]:https://github.com/smartjinyu/MyBookshelf/releases/download/v1.0/com.smartjinyu.mybookshelf_v1.0.apk
+[酷安]
+
+[Google Play]:https://play.google.com/store/apps/details?id=com.smartjinyu.mybookshelf
+[酷安]:http://coolapk.com/apk/com.smartjinyu.mybookshelf
