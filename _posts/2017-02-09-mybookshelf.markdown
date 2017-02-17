@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Bookshelf v1.0 发布 --开源的书籍管理应用"
+title:  "Bookshelf v1.1 更新 --开源的书籍管理应用"
 date:   2017-02-09 01:00:00
 categories: Android
 excerpt: 开源的实体书籍管理应用
