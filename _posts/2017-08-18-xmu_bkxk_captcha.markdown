@@ -40,9 +40,9 @@ excerpt: 识别厦门某校选课系统验证码
 
 ### 使用 Tesseract 获取标记数据
 
-把分割后的图片丢进 Tessoract，限定 whitelist 为 023456789，本以为验证码识别到这里就完成了，但是测试下来识别率只有 60.0% 左右，也就是单字符识别率 88.0%。虽然在实际应用时问题不大，但是本着探(zhe)索(teng)的精神，还是希望通过 Machine Learning 的方法，把识别率提高到 95% 以上。
+把分割后的图片丢进 Tessoract，限定 whitelist 为 023456789，本以为验证码识别到这里就完成了，但是测试下来识别率只有 60.0% 左右，也就是单字符识别率 88.0%。虽然在实际应用时问题不大，但是本着探(zhe)索(teng)的精神，希望能通过 Machine Learning 的方法，把识别率提高到 95% 以上。
 
-虽然 Tesseract 的识别率堪忧，但是通过把识别结果 POST 到选课系统网站尝试登录，可以判断是否识别正确。利用这一点我们可以自动获取足够的 labeled data 供 ML 进行学习。我大概跑了两天，抓取了 27w 左右标记过的验证码，按照 4:1 的比例划分 training set 和 validation set 的话，每个字符也能有 8w 以上的训练样本。
+虽然 Tesseract 的识别率堪忧，但是通过把识别结果 POST 到选课系统网站尝试登录，根据网站返回的结果，可以判断是否识别正确。利用这一点我们可以自动获取足够的 labeled data 供 ML 进行学习。我大概跑了两天，抓取了 27w 左右标记过的验证码，按照 4:1 的比例划分 training set 和 validation set 的话，每个字符能有 8w 以上的训练样本。
 
 ![tesseract_result](\img\2017-08-18\tesseract_result.png)
 
@@ -52,7 +52,7 @@ excerpt: 识别厦门某校选课系统验证码
 
 ### 数据处理
 
-在获取标记的验证码后，我们使用 [processImg.py] 将数据分割为单个字符，并分成 training set 和 validation set。请注意大量的小文件会占用巨大的硬盘空间，并且建议在 SSD 上进行以加快小文件的访问速度。然后使用 [build_tfrecords.py] 脚本，将数据转化为 TFRecords 文件，这是 TensorFlow 的标准数据文件格式。
+在获取标记的验证码后，我们使用 [processImg.py] 将数据分割为单个字符，并分成 training set 和 validation set。请注意大量的小文件会占用巨大的磁盘空间，并且我建议在 SSD 上进行数据存储和处理以加快小文件的访问速度。然后使用 [build_tfrecords.py] 脚本，将数据转化为 TFRecords 文件，这是 TensorFlow 的标准数据文件格式。
 
 
 [processImg.py]:https://github.com/smartjinyu/xmuBKXK_captcha/blob/master/processImg.py
@@ -61,11 +61,11 @@ excerpt: 识别厦门某校选课系统验证码
 
 ### 训练 TensorFlow 模型
 
-Machine Learning 的框架我选的是 TensorFlow，有 Google 爸爸这条大腿，文档齐全，社区活跃，将来少不了跟它打交道。这两天花了不少时间看官方文档和例程，弄懂了其基本的使用方法。在本例中，我们参考 MNIST 样例，准备好的 TFRecords 文件，因为 CNN (Convolutional Neural Network) 我还没有学习，采用较为简单的 `softmax` 函数作为 cost function，只要样本量充足，效果还是可以令人满意的。
+Machine Learning 的框架我选的是 TensorFlow，有 Google 爸爸这条大腿，文档齐全，社区活跃，将来少不了跟它打交道。这两天花了不少时间看官方文档和例程，弄懂了其基本的使用方法。在本例中，我们参考 MNIST 样例，使用前面准备好的 TFRecords 文件作为输入样本，因为 CNN (Convolutional Neural Network) 尚未学过，采用较为简单的 `softmax` 函数作为 cost function，只要样本量充足，效果还是令人满意的。
 
 ![model_code](\img\2017-08-18\model_code.png)
 
-在训练过程中，在 steps = 1000 之后，loss 趋向于 0，validation accuracy 基本固定在1.0。保存训练好的 model，登录选课系统进行实验，几次实验的识别率都在 99.9% 以上，速度也快于 Tesseract，还是相当令人满意的。
+在训练过程中，在 steps = 1000 之后，loss 趋向于 0，validation accuracy 基本固定在1.0。保存训练好的 model，登录选课系统进行实验，几次实验的识别率都在 99.9% 以上，速度也快于 Tesseract，单就识别效果而言令人相当满意。
 
 ![TensorFlow](\img\2017-08-18\tensorflow_result.png)
 
