@@ -81,7 +81,7 @@ Machine Learning 的框架我选的是 TensorFlow，有 Google 爸爸这条大�
 
 
     Import ocrCaptcha
-    reuslt = ocrRawCaptcha(Image)
+    result = ocrRawCaptcha(Image)
 
 效果如下
 ![sample_cmd](\img\2017-08-18\sample_cmd.png)

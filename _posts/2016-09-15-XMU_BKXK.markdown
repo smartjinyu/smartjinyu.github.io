@@ -65,8 +65,11 @@ analytics: true
 ![back](/img/2016-09-15/back.png)
 
 - 输入学号密码，输入弹出的验证码后登陆成功(没写验证码识别模块，大神可以加上)。然后输入选课轮次，本例中为2016104
+
+(2017/08/24 更新: 厦门大学选课系统验证码的识别已经实现，可参见[这篇博客])
 ![captcha](/img/2016-09-15/captcha.png)
 
+[这篇博客]:https://smartjinyu.com/machine/learning/2017/08/18/xmu_bkxk_captcha.html
 
 - 选择自动选课模式。1为尝试指定次数后停止，2为一直尝试直到手动停止。我们输入2，一段时间后手动停止程序
 ![loop](/img/2016-09-15/loop.png)
