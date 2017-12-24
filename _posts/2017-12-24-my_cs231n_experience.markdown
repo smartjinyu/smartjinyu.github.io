@@ -71,9 +71,8 @@ Stanford University 的 [CS231n: Convolutional Neural Networks for Visual Recogn
 
 其他文章诸如 Adam 方法、ResNet 等只是粗略扫过，没有认真细读，故不在此列举。
 
-[Alex Krizhevsky, Ilya Sutskever, Geoffrey E. Hinton:ImageNet classification with deep convolutional neural networks]:
-https://dl.acm.org/citation.cfm?id=2999257
 
+[Alex Krizhevsky, Ilya Sutskever, Geoffrey E. Hinton:ImageNet classification with deep convolutional neural networks]:https://dl.acm.org/citation.cfm?id=2999257
 
 [Sergey Ioffe, Christian Szegedy: Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift]:https://arxiv.org/abs/1502.03167
 
@@ -125,8 +124,7 @@ Feature Visualization 部分读论文三篇：
 
     本文使用 Deconvolution Network 进行 Feature Visualization，并在 ImageNet 上进行测试并对结果进行了说明。
 
-- [Jason Yosinski, Jeff Clune, Anh Nguyen, Thomas Fuchs, Hod Lipson
-: Understanding Neural Networks Through Deep Visualization]
+- [Jason Yosinski, Jeff Clune, Anh Nguyen, Thomas Fuchs, Hod Lipson: Understanding Neural Networks Through Deep Visualization]
 
     本文中提供了一个软件可以实时地对 CNN 进行 Visualization，并比较几种不同的 regularization 方法及其效果。
 
@@ -163,8 +161,7 @@ PA3 中有实现 Style Transfer 的任务。另外上文中提出的 Style Trans
 
 [Matthew D Zeiler, Rob Fergus: Visualizing and Understanding Convolutional Networks]:https://arxiv.org/abs/1311.2901
 
-[Jason Yosinski, Jeff Clune, Anh Nguyen, Thomas Fuchs, Hod Lipson
-: Understanding Neural Networks Through Deep Visualization]:https://arxiv.org/abs/1506.06579
+[Jason Yosinski, Jeff Clune, Anh Nguyen, Thomas Fuchs, Hod Lipson: Understanding Neural Networks Through Deep Visualization]:https://arxiv.org/abs/1506.06579
 
 [Karen Simonyan, Andrea Vedaldi, Andrew Zisserman
 :Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps]:
@@ -215,14 +212,12 @@ http://ieeexplore.ieee.org/document/7780634/
     本文是 Goodfellow (提出 GANs 的那位大牛) 在 NIPS 2016 上所做的 Tutorial，虽然长达五十多页，但是读起来比论文轻松很多，详细地比较了其他 Generative Models 与 GANs 的优缺点、对 GANs 的详细介绍、训练 GANs 的 Tips 以及回答一些 FAQ，非常值得一读。
 
 
-到目前为止 GANs 还是一个大火的研究领域，每年都有大量新的模型结构、训练方法等提出，时间有限，只能浅尝辄止了，下面两个 GitHub Repository 整理了 GANs 的模型和论文，有兴趣的可以一看: [the-gan-zoo],[AdversarialNetsPapers
-].
+到目前为止 GANs 还是一个大火的研究领域，每年都有大量新的模型结构、训练方法等提出，时间有限，只能浅尝辄止了，下面两个 GitHub Repository 整理了 GANs 的模型和论文，有兴趣的可以一看: [the-gan-zoo],[AdversarialNetsPapers].
 
 
 [Ian J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza: Generative Adversarial Networks]:https://arxiv.org/abs/1406.2661
 
-[Xudong Mao, Qing Li, Haoran Xie, Raymond Y.K. Lau: Least Squares Generative Adversarial Networks]:
-https://arxiv.org/abs/1611.04076
+[Xudong Mao, Qing Li, Haoran Xie, Raymond Y.K. Lau: Least Squares Generative Adversarial Networks]:https://arxiv.org/abs/1611.04076
 
 [Alec Radford, Luke Metz, Soumith Chintala: Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks]:https://arxiv.org/abs/1511.06434
 
