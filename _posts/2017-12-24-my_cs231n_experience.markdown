@@ -196,6 +196,7 @@ PA3 中有实现 Style Transfer 的任务。另外上文中提出的 Style Trans
     本文提出了 Least Squares GANs，即将 loss function 修改如下
     ![LSGANs](\img\2017-12-24\LSGANs.png)
     (图片撷取自本论文)
+    
     作者认为这样的修改会使得训练过程更加稳定，最后生成的图片也更加 realistic。
 
 - [Alec Radford, Luke Metz, Soumith Chintala: Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks]
