@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "我的 CS231n(Spring 2017) 学习之路"
+title:  "我的 CS231n (Spring 2017) 学习之路"
 date:   2017-12-23 01:00:00
 categories: Machine Learning
 excerpt: 学习 CS231n 的一个总结
@@ -18,7 +18,7 @@ Stanford University 的 [CS231n: Convolutional Neural Networks for Visual Recogn
 
 ## 课程介绍
 
-如课程名称所述，此课程讲述当前大火的 Neural Network 在 Computer Vision 领域的应用，教师团队由 Fei-Fei Li 女神和她的两位 Phd Justin Johnson 和 Serena Yeung 组成（然而 Fei-Fei 只在第一节课出现过）。课程的所有资料包括 lecture videos 均可在课程主页和 [YouTube] 上获取。除课堂讲授外，设计良好的 Programming Assignements 也迫使我亲手实现一些看起来容易、实则需要处处留意的功能(比如看似 trivial 的 Backpropgation)。课程的 Slides 和 Notes 及其中提及的论文，亦是 Computer Vision 各个细分领域良好的入门读物。
+如课程名称所述，此课程讲述当前大火的 Neural Network 在 Computer Vision 领域的应用，教师团队由 Fei-Fei Li 女神和她的两位 Phd Justin Johnson 和 Serena Yeung 组成（然而 Fei-Fei 只在第一节课出现过）。课程的所有资料包括 lecture videos 均可在[课程主页]和 [YouTube] 上获取。除课堂讲授外，设计良好的 Programming Assignements 也迫使我亲手实现一些看起来容易、实则需要处处留意的功能(比如看似 trivial 的 Backpropgation)。课程的 Slides 和 Notes 及其中提及的论文，亦是 Computer Vision 各个细分领域良好的入门读物。
 
 ![Instructors And TAs](\img\2017-12-24\instructors&TAs.png)
 (图片改编自 CS231n 课程网站)
@@ -27,6 +27,7 @@ Stanford University 的 [CS231n: Convolutional Neural Networks for Visual Recogn
 
 我的 Assignment 使用 GPL v3 协议开源在[我的 GitHub] 上，欢迎参考交流。
 
+[课程主页]:http://cs231n.stanford.edu/
 [YouTube]:https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv
 [Syllabus]:http://cs231n.stanford.edu/syllabus.html
 [我的 GitHub]:https://github.com/smartjinyu/CS231n_assignments
@@ -128,8 +129,7 @@ Feature Visualization 部分读论文三篇：
 
     本文中提供了一个软件可以实时地对 CNN 进行 Visualization，并比较几种不同的 regularization 方法及其效果。
 
-- [Karen Simonyan, Andrea Vedaldi, Andrew Zisserman
-:Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps]
+- [Karen Simonyan, Andrea Vedaldi, Andrew Zisserman:Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps]
 
     本文提出了叫做 Saliency Map 的模型，属于 gradient-based 方法。通过计算经过 CNN 后的 scores 关于初始图片每个 pixel 的导数，并在每个像素点取各个 channel 的最大绝对值获得 Saliency Map。所得结果直观地表示了初始图像的哪些部分对于 CNN 判断其所属的 class 有较为的重要的作用。
     ![Saliency Map](\img\2017-12-24\saliency_map.png)
@@ -163,8 +163,7 @@ PA3 中有实现 Style Transfer 的任务。另外上文中提出的 Style Trans
 
 [Jason Yosinski, Jeff Clune, Anh Nguyen, Thomas Fuchs, Hod Lipson: Understanding Neural Networks Through Deep Visualization]:https://arxiv.org/abs/1506.06579
 
-[Karen Simonyan, Andrea Vedaldi, Andrew Zisserman
-:Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps]:
+[Karen Simonyan, Andrea Vedaldi, Andrew Zisserman:Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps]:
 https://arxiv.org/abs/1312.6034
 
 [Christian Szegedy, Wojciech Zaremba, Ilya Sutskever: Intriguing properties of neural networks]:
@@ -241,7 +240,7 @@ http://ieeexplore.ieee.org/document/7780634/
 
 - [Forrest N. Iandola, Song Han, Matthew W. Moskewicz: SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size]
 
-    本文提出了 SqueezeNet 模型，从设计之处就考虑减少参数数量，通过结合 1*1 conv、在 input channel 上使用 3*3 的 filter、延迟 downsample 的时间，得到的模型拥有与 AlexNet 相仿的 accuracy，但是只用了 50x fewer 的 parameters，如果再结合 Deep Compression 方法,则可以达到 510x fewer，也就是不到 0.5MB 的 model size。
+    本文提出了 SqueezeNet 模型，从设计之处就考虑减少参数数量，通过结合 1x1 conv、在 input channel 上使用 3x3 的 filter、延迟 downsample 的时间，得到的模型拥有与 AlexNet 相仿的 accuracy，但是只用了 50x fewer 的 parameters，如果再结合 Deep Compression 方法,则可以达到 510x fewer，也就是不到 0.5MB 的 model size。
 
 [Song Han]:https://stanford.edu/~songhan/
 [Forrest N. Iandola, Song Han, Matthew W. Moskewicz: SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size]:https://arxiv.org/abs/1602.07360
@@ -269,6 +268,6 @@ http://ieeexplore.ieee.org/document/7780634/
 
 写此文的另一目的，是要表达对 Stanford University 和 CS231n 课程团队(Instructor, TAs, Invited Speakers, Students) 的感谢，他们将课程资料完整免费地在互联网上公开，让我这个地处中国东南小岛上的学生也可以领略到优秀的课程(他们这样做大概不是为了创建什么国家精品课程吧)。
 
-在完成作业的过程中，部分地方参考了互联网上他人的解法，在[我的作业]中的相应位置都有注明；在本文中提及或未能提及的论文、博客、回答等都对我的学习产生有利的影响，在此都一并表示感谢。
+在完成作业的过程中，部分地方参考了互联网上他人的解法，在[我的作业]中的相应位置都有注明；在本文中提及或未能提及的论文、博客、回答等都对我的学习产生有利的影响，在此一并表示感谢。
 
 [我的作业]:https://github.com/smartjinyu/CS231n_assignments
