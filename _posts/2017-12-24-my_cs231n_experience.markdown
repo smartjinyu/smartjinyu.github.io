@@ -129,7 +129,7 @@ Feature Visualization 部分读论文三篇：
 
     本文中提供了一个软件可以实时地对 CNN 进行 Visualization，并比较几种不同的 regularization 方法及其效果。
 
-- [Karen Simonyan, Andrea Vedaldi, Andrew Zisserman:Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps]
+- [Karen Simonyan, Andrea Vedaldi, Andrew Zisserman: Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps]
 
     本文提出了叫做 Saliency Map 的模型，属于 gradient-based 方法。通过计算经过 CNN 后的 scores 关于初始图片每个 pixel 的导数，并在每个像素点取各个 channel 的最大绝对值获得 Saliency Map。所得结果直观地表示了初始图像的哪些部分对于 CNN 判断其所属的 class 有较为的重要的作用。
     ![Saliency Map](\img\2017-12-24\saliency_map.png)
@@ -163,8 +163,7 @@ PA3 中有实现 Style Transfer 的任务。另外上文中提出的 Style Trans
 
 [Jason Yosinski, Jeff Clune, Anh Nguyen, Thomas Fuchs, Hod Lipson: Understanding Neural Networks Through Deep Visualization]:https://arxiv.org/abs/1506.06579
 
-[Karen Simonyan, Andrea Vedaldi, Andrew Zisserman:Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps]:
-https://arxiv.org/abs/1312.6034
+[Karen Simonyan, Andrea Vedaldi, Andrew Zisserman: Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps]:https://arxiv.org/abs/1312.6034
 
 [Christian Szegedy, Wojciech Zaremba, Ilya Sutskever: Intriguing properties of neural networks]:
 https://arxiv.org/abs/1312.6199
