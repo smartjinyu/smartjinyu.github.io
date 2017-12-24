@@ -20,7 +20,7 @@ Stanford University 的 [CS231n: Convolutional Neural Networks for Visual Recogn
 
 如课程名称所述，此课程讲述当前大火的 Neural Network 在 Computer Vision 领域的应用，教师团队由 Fei-Fei Li 女神和她的两位 Phd Justin Johnson 和 Serena Yeung 组成（然而 Fei-Fei 只在第一节课出现过）。课程的所有资料包括 lecture videos 均可在课程主页和 [YouTube] 上获取。除课堂讲授外，设计良好的 Programming Assignements 也迫使我亲手实现一些看起来容易、实则需要处处留意的功能(比如看似 trivial 的 Backpropgation)。课程的 Slides 和 Notes 及其中提及的论文，亦是 Computer Vision 各个细分领域良好的入门读物。
 
-![Instructors And TAs](..\img\2017-12-24\instructors&TAs.png)
+![Instructors And TAs](\img\2017-12-24\instructors&TAs.png)
 (图片改编自 CS231n 课程网站)
 
 按照课程的 [Syllabus] 和三个 Assignment 的安排，我把这门课程分为三个部分，Lecture 1 - 3 介绍了简单的背景知识，Lecture 4 - 9 为对 Convolutional Neural Network 的详细说明，Lecture 10 - 16 则是 CNN 更广泛的应用。
@@ -35,7 +35,7 @@ Stanford University 的 [CS231n: Convolutional Neural Networks for Visual Recogn
 
 第一部分为 Deep Learning 背景知识的简单介绍，除了课程信息外，介绍了 softmax 和 svm 两种 loss function、SGD 等 Optimization 方法，以及 K-Nearest Neighbor 和 Linear Classifier 两种简单的 Image Classifier。这部分内容如果有 Andrew Ng 的 [CS229: Machine Learning] 作为先修课程的话，应当相当熟悉，仅仅是个回顾而已。
 
-![Part 1](..\img\2017-12-24\part1.png)
+![Part 1](\img\2017-12-24\part1.png)
 (图片撷取自 CS231n 课程网站)
 
 
@@ -48,7 +48,7 @@ Stanford University 的 [CS231n: Convolutional Neural Networks for Visual Recogn
 
 第二部分详细介绍了本课程的主角 —— Convolutional Neural Network，包括每个 layer 的作用(Conv layer, Pooling layer, FC layer 等)、Backpropagation 的计算、优化的训练方法(如 Adam, Momentum, Dropout, Batch-Normalization 等)、训练 CNN 的注意事项(如 paramters 的 initialization, tune hyperparameters 的方法等)，内容相当详尽。在每个 Lecture 之后都提供了相应的 Notes，基本涵盖了 Lecture 里提到的所有内容并加以补充。Lecture 8 介绍了常见的 Deep Learning Framework(如 TensorFlow, Caffe, Pytorch等)， Lecture 9 介绍了几个著名的 CNN Architecture(AlexNet, VGGNet, GoogLeNet, ResNet)，大多为历年 ILSVRC 竞赛的获胜者。
 
-![Part 2](..\img\2017-12-24\part2.png)
+![Part 2](\img\2017-12-24\part2.png)
 (图片撷取自 CS231n 课程网站)
 
 
@@ -134,7 +134,7 @@ Feature Visualization 部分读论文三篇：
 :Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps]
 
     本文提出了叫做 Saliency Map 的模型，属于 gradient-based 方法。通过计算经过 CNN 后的 scores 关于初始图片每个 pixel 的导数，并在每个像素点取各个 channel 的最大绝对值获得 Saliency Map。所得结果直观地表示了初始图像的哪些部分对于 CNN 判断其所属的 class 有较为的重要的作用。
-    ![Saliency Map](..\img\2017-12-24\saliency_map.png)
+    ![Saliency Map](\img\2017-12-24\saliency_map.png)
     (图片撷取自本论文)
 
 这部分似乎更加偏重于 intuition 而不是严格证明，可能是我学力有限的缘故，总觉得读过论文后不少地方将信将疑。但无论如何，Feature Visualization 为研究被称为 black-box 的神经网络提供了一个思路。
@@ -144,7 +144,7 @@ Adversarial Examples 部分读论文一篇：
 - [Christian Szegedy, Wojciech Zaremba, Ilya Sutskever: Intriguing properties of neural networks]
 
     在本文中作者提出了存在让 CNN misclassify 的 adversarial examples，即对于一张 predicted correctly 的图像，加上一个精心构造的微小"noise"(变化常常是肉眼不可见的)，就能使 CNN 给它一个错误的 label，甚至给出较高的 confidence。作者提出这种现象对于不同 Training set 和不同架构的 CNN 都普遍存在，可能 CNN 的一个 flaw。PA3 中有一个作业通过 Gradient Ascent 的方法构造这样的样本。
-    ![Adversarial Examples](..\img\2017-12-24\adversarial_examples.png)
+    ![Adversarial Examples](\img\2017-12-24\adversarial_examples.png)
     (图片撷取自本论文)
 
 Style Transfer 部分读论文两篇：
@@ -156,7 +156,7 @@ Style Transfer 部分读论文两篇：
 - [Leon A. Gatys, Alexander S. Ecker, Matthias Bethge: Image Style Transfer Using Convolutional Neural Networks]
 
     本文为上一篇论文的延续，作者提出可以用 CNN 实现将图片A的 Style 和图片 B 的 Content 结合在一起，得到一张新的图片，“取他人之神成我之形”。方法是除了上文中提到的 Style 的 loss 外，再引入一个 Content 的 loss(即每层 featrue map 之差的 Frobenius Norm)，并将他们加权平均，同样使用 SGD 进行训练。使用这种方法可以得到许多 incredible 的图片。
-    ![Style Transfer](..\img\2017-12-24\style_transfer.png)
+    ![Style Transfer](\img\2017-12-24\style_transfer.png)
     (图片撷取自本论文)
 
 PA3 中有实现 Style Transfer 的任务。另外上文中提出的 Style Transfer 方法需要相当大的计算量，无法用于 interactive application，而 Justin Johnson (本课程的讲师之一)等提出了[基于 Perceptual Loss 的方法]，可以极大地提升计算效率。
@@ -184,7 +184,7 @@ http://ieeexplore.ieee.org/document/7780634/
 #### Lecture 13 Generative Models 
 
 本讲介绍 Generative Models，属于 Unsupervised Learning，根据是否显式地求出 Model Density，又有如下分类：
-![Generative Models](..\img\2017-12-24\generative_models.png)
+![Generative Models](\img\2017-12-24\generative_models.png)
 (图片撷取自课程 Slides，原始出处见右下角)
 
 本讲主要介绍 PixelRNN/PixelCNN, Variational Autoencoder 和 GANs(Generative Adversarial Nets)。由于目前个人只学习过基本的概率论课程，数理统计、随机过程、高等概率论等都没有修习，加上最近时间有限，这部分仅以完成 PA3 的 GAN 部分为目标，没有细究。
@@ -194,7 +194,7 @@ http://ieeexplore.ieee.org/document/7780634/
     
     本文提出了 GAN 模型，即网络中由一个 Generator 生成与原始数据分布相似的样本，一个 Discriminator 负责区分 Generator 生成的样本和真实样本，通过求解这样一个 min-max game 来让 Generator 生成的样本尽可能与原始数据拥有相同的分布。
     
-    ![Vanilla GANs](..\img\2017-12-24\vanilla_gans.png)
+    ![Vanilla GANs](\img\2017-12-24\vanilla_gans.png)
     (图片撷取自本论文)
 
     这篇论文引发了近几年大热研究的 GAN 的热潮，由于 GAN 训练困难，故后来提出了各种各样的改进模型及训练方法。
@@ -202,7 +202,7 @@ http://ieeexplore.ieee.org/document/7780634/
 - [Xudong Mao, Qing Li, Haoran Xie, Raymond Y.K. Lau: Least Squares Generative Adversarial Networks]
     
     本文提出了 Least Squares GANs，即将 loss function 修改如下
-    ![LSGANs](..\img\2017-12-24\LSGANs.png)
+    ![LSGANs](\img\2017-12-24\LSGANs.png)
     (图片撷取自本论文)
     作者认为这样的修改会使得训练过程更加稳定，最后生成的图片也更加 realistic。
 
@@ -258,7 +258,7 @@ https://arxiv.org/abs/1611.04076
 [Explaining and Harnessing Adversarial Examples]:https://arxiv.org/abs/1412.6572
 
 ## 后记
-![Assigments](..\img\2017-12-24\assignments.png)
+![Assigments](\img\2017-12-24\assignments.png)
 
 作为一门面向本科生的深度学习的入门课程，CS231n 确实不负盛名，从 Lecture 到 Notes 到 Assignment 都做了精心地准备，除了基本的 CNN 外，CNN 的众多应用也做了简要的介绍，有兴趣的人完全可以寻找其中一个方向深入钻研下去。虽然花了我将近一个学期的时间学习(有这学期课业太忙的缘故)，但绝对物有所值。
 
