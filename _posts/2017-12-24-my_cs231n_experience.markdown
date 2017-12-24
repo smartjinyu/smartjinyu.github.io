@@ -165,14 +165,11 @@ PA3 中有实现 Style Transfer 的任务。另外上文中提出的 Style Trans
 
 [Karen Simonyan, Andrea Vedaldi, Andrew Zisserman: Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps]:https://arxiv.org/abs/1312.6034
 
-[Christian Szegedy, Wojciech Zaremba, Ilya Sutskever: Intriguing properties of neural networks]:
-https://arxiv.org/abs/1312.6199
+[Christian Szegedy, Wojciech Zaremba, Ilya Sutskever: Intriguing properties of neural networks]:https://arxiv.org/abs/1312.6199
 
-[Leon A. Gatys, Alexander S. Ecker, Matthias Bethge: Texture Synthesis Using Convolutional Neural Networks]:
-https://arxiv.org/abs/1505.07376
+[Leon A. Gatys, Alexander S. Ecker, Matthias Bethge: Texture Synthesis Using Convolutional Neural Networks]:https://arxiv.org/abs/1505.07376
 
-[Leon A. Gatys, Alexander S. Ecker, Matthias Bethge: Image Style Transfer Using Convolutional Neural Networks]:
-http://ieeexplore.ieee.org/document/7780634/
+[Leon A. Gatys, Alexander S. Ecker, Matthias Bethge: Image Style Transfer Using Convolutional Neural Networks]:http://ieeexplore.ieee.org/document/7780634/
 
 [基于 Perceptual Loss 的方法]:https://arxiv.org/abs/1603.08155
 
