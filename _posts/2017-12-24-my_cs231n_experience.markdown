@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "我的 CS231n (Spring 2017) 学习之路"
+title:  "我的深度学习入门之路 (CS231n Spring 2017)"
 date:   2017-12-23 01:00:00
 categories: Machine Learning
 excerpt: 学习 CS231n 的一个总结
@@ -263,8 +263,10 @@ PA3 中有实现 Style Transfer 的任务。另外上文中提出的 Style Trans
 
 ## 致谢
 
-写此文的另一目的，是要表达对 Stanford University 和 CS231n 课程团队(Instructor, TAs, Invited Speakers, Students) 的感谢，他们将课程资料完整免费地在互联网上公开，让广大深度学习的学习者包括我这个地处中国东南小岛上的学生也可以领略到优秀的课程(他们这样做大概不是为了创建什么国家精品课程吧)。
+写此文的另一目的，是要表达对 Stanford University 和 CS231n 课程团队(Instructor, TAs, Invited Speakers, Students) 的感谢，他们将课程资料完整免费地在互联网上公开，让广大深度学习的学习者包括我这个地处中国东南小岛上的学生也可以领略到优秀的课程。
 
 在完成作业的过程中，部分地方参考了互联网上他人的解法，在[我的作业]中的相应位置都有注明；在本文中提及或未能提及的论文、博客、回答等都对我的学习产生有利的影响，在此一并表示感谢。
+
+在修习 CS231n 的同时，我同时学校修习厦门大学邱明老师开设的 Python 与深度学习校选课，做了不少 TensorFlow 的练习，与 CS231n 互为补充，共同构成了我入门深度学习的基石，在此也要表达感谢。
 
 [我的作业]:https://github.com/smartjinyu/CS231n_assignments
