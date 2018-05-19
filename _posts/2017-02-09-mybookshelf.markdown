@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Bookshelf v1.3 更新 --开源的书籍管理应用"
+title:  "Bookshelf v1.4 更新 --开源的书籍管理应用"
 date:   2017-02-09 01:00:00
 categories: Android
 excerpt: 开源的实体书籍管理应用
@@ -41,6 +41,16 @@ Bookshelf - 开源的实体书籍管理工具，您的电子书架
 *目前仅支持 Douban.com 和 OpenLibrary.org, 后续会加入更多网络服务支持
 
 ## 更新日志
+
+### 2018-05-19 v1.4 更新
+
+1. 根据 Google 要求添加隐私政策说明
+2. 移除捐赠功能
+3. 更新依赖库、targetSdk 版本
+4. 问题修正和性能提升
+
+本次更新主要为遵守 Google Play 政策的维护性更新。
+
 
 ### 2017-03-11 v1.3 更新
 
